@@ -1,0 +1,644 @@
+[gd_scene load_steps=14 format=3 uid="uid://q15ts0d7cg45"]
+
+[ext_resource type="Script" uid="uid://dsb58suowyh1f" path="res://script_gdscript/btn_ab_list.gd" id="1_y4oxd"]
+[ext_resource type="Script" uid="uid://c12w2e8u4lxj7" path="res://script_gdscript/valuePosition_panel.gd" id="2_i3gab"]
+[ext_resource type="Script" uid="uid://bxg3cc1a4ig4t" path="res://script_gdscript/button_copypaste.gd" id="3_8tpif"]
+[ext_resource type="Texture2D" uid="uid://be1gd2vvirx6b" path="res://icon/UI/copy.svg" id="3_jprsp"]
+[ext_resource type="Texture2D" uid="uid://bjr6k0wgrhqya" path="res://icon/UI/clipboard.svg" id="3_y4oxd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3gab"]
+bg_color = Color(0.832031, 0.832031, 0.832031, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ra5t3"]
+bg_color = Color(0.832031, 0.832031, 0.832031, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8owv"]
+bg_color = Color(0.832031, 0.832031, 0.832031, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jajy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqd47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ek0fr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3svaj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jby6q"]
+bg_color = Color(0.832031, 0.832031, 0.832031, 1)
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(182, 182)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [243.0]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i3gab")
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/BoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ra5t3")
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer"]
+layout_mode = 2
+script = ExtResource("1_y4oxd")
+control_a = NodePath("BoxContainer")
+control_b = NodePath("BoxContainer2")
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="Button" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8owv")
+text = "X"
+
+[node name="Button2" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8owv")
+text = "Y"
+
+[node name="Button3" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8owv")
+text = "w"
+
+[node name="Button4" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8owv")
+text = "H"
+
+[node name="Button5" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8owv")
+text = "R"
+
+[node name="BoxContainer2" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Panel_positionx" type="PanelContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jajy")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer" node_paths=PackedStringArray("drag_control", "value_lineedit", "increment_button", "decrement_button")]
+layout_mode = 2
+vertical = true
+script = ExtResource("2_i3gab")
+drag_control = NodePath("Panel")
+value_lineedit = NodePath("LineEdit")
+increment_button = NodePath("Panel/+")
+decrement_button = NodePath("Panel/-")
+min_value = -10000.0
+max_value = 10000.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Position x"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqd47")
+placeholder_text = "120px"
+alignment = 1
+
+[node name="Panel" type="Panel" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ek0fr")
+
+[node name="-" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "-"
+
+[node name="+" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "+"
+
+[node name="Control" type="Control" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer/Control" node_paths=PackedStringArray("button_pega", "button_copia", "lineedit", "label_tooltip")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_8tpif")
+button_pega = NodePath("Button")
+button_copia = NodePath("Button2")
+lineedit = NodePath("../../LineEdit")
+label_tooltip = NodePath("Label")
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Copy"
+
+[node name="Button" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_y4oxd")
+
+[node name="Button2" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positionx/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_jprsp")
+
+[node name="Panel_positiony" type="PanelContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jajy")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer" node_paths=PackedStringArray("drag_control", "value_lineedit", "increment_button", "decrement_button")]
+layout_mode = 2
+vertical = true
+script = ExtResource("2_i3gab")
+drag_control = NodePath("Panel")
+value_lineedit = NodePath("LineEdit")
+increment_button = NodePath("Panel/+")
+decrement_button = NodePath("Panel/-")
+min_value = -10000.0
+max_value = 10000.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Position Y"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqd47")
+placeholder_text = "120px"
+alignment = 1
+
+[node name="Panel" type="Panel" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ek0fr")
+
+[node name="-" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "-"
+
+[node name="+" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "+"
+
+[node name="Control" type="Control" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer/Control" node_paths=PackedStringArray("button_pega", "button_copia", "lineedit", "label_tooltip")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_8tpif")
+button_pega = NodePath("Button")
+button_copia = NodePath("Button2")
+lineedit = NodePath("../../LineEdit")
+label_tooltip = NodePath("Label")
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Copy"
+
+[node name="Button" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_y4oxd")
+
+[node name="Button2" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_positiony/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_jprsp")
+
+[node name="Panel_SizeW" type="PanelContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jajy")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer" node_paths=PackedStringArray("drag_control", "value_lineedit", "increment_button", "decrement_button")]
+layout_mode = 2
+vertical = true
+script = ExtResource("2_i3gab")
+drag_control = NodePath("Panel")
+value_lineedit = NodePath("LineEdit")
+increment_button = NodePath("Panel/+")
+decrement_button = NodePath("Panel/-")
+min_value = -10000.0
+max_value = 10000.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = " Size Width"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqd47")
+placeholder_text = "120px"
+alignment = 1
+
+[node name="Panel" type="Panel" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ek0fr")
+
+[node name="-" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "-"
+
+[node name="+" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "+"
+
+[node name="Control" type="Control" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer/Control" node_paths=PackedStringArray("button_pega", "button_copia", "lineedit", "label_tooltip")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_8tpif")
+button_pega = NodePath("Button")
+button_copia = NodePath("Button2")
+lineedit = NodePath("../../LineEdit")
+label_tooltip = NodePath("Label")
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Copy"
+
+[node name="Button" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_y4oxd")
+
+[node name="Button2" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeW/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_jprsp")
+
+[node name="Panel_SizeH" type="PanelContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jajy")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer" node_paths=PackedStringArray("drag_control", "value_lineedit", "increment_button", "decrement_button")]
+layout_mode = 2
+vertical = true
+script = ExtResource("2_i3gab")
+drag_control = NodePath("Panel")
+value_lineedit = NodePath("LineEdit")
+increment_button = NodePath("Panel/+")
+decrement_button = NodePath("Panel/-")
+min_value = -10000.0
+max_value = 10000.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Size H"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqd47")
+placeholder_text = "120px"
+alignment = 1
+
+[node name="Panel" type="Panel" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ek0fr")
+
+[node name="-" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "-"
+
+[node name="+" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "+"
+
+[node name="Control" type="Control" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer/Control" node_paths=PackedStringArray("button_pega", "button_copia", "lineedit", "label_tooltip")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_8tpif")
+button_pega = NodePath("Button")
+button_copia = NodePath("Button2")
+lineedit = NodePath("../../LineEdit")
+label_tooltip = NodePath("Label")
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Copy"
+
+[node name="Button" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_y4oxd")
+
+[node name="Button2" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_SizeH/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_jprsp")
+
+[node name="Panel_Rotation" type="PanelContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1jajy")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer" node_paths=PackedStringArray("drag_control", "value_lineedit", "increment_button", "decrement_button")]
+layout_mode = 2
+vertical = true
+script = ExtResource("2_i3gab")
+drag_control = NodePath("Panel")
+value_lineedit = NodePath("LineEdit")
+increment_button = NodePath("Panel/+")
+decrement_button = NodePath("Panel/-")
+min_value = -10000.0
+max_value = 10000.0
+step = 0.001
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Rotation"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqd47")
+placeholder_text = "120px"
+alignment = 1
+
+[node name="Panel" type="Panel" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ek0fr")
+
+[node name="-" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "-"
+
+[node name="+" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer/Panel"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3svaj")
+text = "+"
+
+[node name="Control" type="Control" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer/Control" node_paths=PackedStringArray("button_pega", "button_copia", "lineedit", "label_tooltip")]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_8tpif")
+button_pega = NodePath("Button")
+button_copia = NodePath("Button2")
+lineedit = NodePath("../../LineEdit")
+label_tooltip = NodePath("Label")
+
+[node name="Label" type="Label" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Copy"
+
+[node name="Button" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_y4oxd")
+
+[node name="Button2" type="Button" parent="PanelContainer/BoxContainer/PanelContainer/BoxContainer/BoxContainer2/Panel_Rotation/MarginContainer/BoxContainer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jby6q")
+icon = ExtResource("3_jprsp")

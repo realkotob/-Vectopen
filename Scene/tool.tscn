@@ -1,0 +1,338 @@
+[gd_scene format=3 uid="uid://bx3q1qnh3ckge"]
+
+[ext_resource type="Texture2D" uid="uid://bhwt1q10wgxq4" path="res://icon/UI/navigation.svg" id="1_av7yx"]
+[ext_resource type="Texture2D" uid="uid://dn7ahdawpmbm4" path="res://icon/UI/navigation_BLACK.svg" id="2_v66jq"]
+[ext_resource type="Texture2D" uid="uid://rjkqxvlgiww4" path="res://icon/UI/design_nodo.svg" id="3_av7yx"]
+[ext_resource type="Texture2D" uid="uid://bn1pwgywu2l4p" path="res://icon/UI/hexagon-plus.svg" id="4_jm412"]
+[ext_resource type="Texture2D" uid="uid://ds52dynwo6brb" path="res://icon/UI/design_nodoblack.svg" id="4_ootfb"]
+[ext_resource type="Texture2D" uid="uid://bub0uyygkt2v0" path="res://icon/UI/draw.svg" id="5_ootfb"]
+[ext_resource type="Texture2D" uid="uid://no6fjyh8bp0a" path="res://icon/UI/media-image.svg" id="6_v66jq"]
+[ext_resource type="Script" uid="uid://b0iykyemrmivd" path="res://script_gdscript/btn_toogle.gd" id="7_d7vvg"]
+[ext_resource type="Texture2D" uid="uid://c5qawe4bhctlv" path="res://icon/UI/pentagon.svg" id="10_3q3ql"]
+[ext_resource type="Texture2D" uid="uid://fenxrju12ybp" path="res://icon/UI/keyframes-plus.svg" id="10_ootfb"]
+[ext_resource type="Texture2D" uid="uid://fmckbmymo1rm" path="res://icon/UI/text-square.svg" id="11_hj3e3"]
+[ext_resource type="Texture2D" uid="uid://cml1fqir57jnc" path="res://icon/UI/keyframes.svg" id="11_v66jq"]
+[ext_resource type="Texture2D" uid="uid://cf2db08aecx05" path="res://icon/UI/triangle.svg" id="13_ovbj8"]
+[ext_resource type="Texture2D" uid="uid://dxytqscwj8a1i" path="res://icon/UI/star.svg" id="14_mtmny"]
+[ext_resource type="Texture2D" uid="uid://cff3jndy27bxf" path="res://icon/UI/flare.svg" id="15_7glcw"]
+[ext_resource type="Texture2D" uid="uid://46tgu3bep6wl" path="res://icon/UI/droplet.svg" id="16_7qt6x"]
+[ext_resource type="PackedScene" uid="uid://cp3oraptv54v8" path="res://Scene/spin_box.tscn" id="17_v66jq"]
+[ext_resource type="Texture2D" uid="uid://cxludb2vushl4" path="res://icon/UI/TEXTO-PARRAFO.svg" id="18_hj3e3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av7yx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ootfb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.180392)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q3ql"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Herramientas" type="Control" unique_id=1376235726]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_right = 135.0
+offset_bottom = 65.0
+grow_horizontal = 2
+script = ExtResource("7_d7vvg")
+button_toggle_path = NodePath("PanelContainer/MarginContainer/BoxContainer/TextureButton8")
+metadata/_edit_vertical_guides_ = [603.0]
+metadata/_edit_horizontal_guides_ = [22.0]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1008422281]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 48.0
+offset_bottom = 262.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_av7yx")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=370998743]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer/MarginContainer" unique_id=414177970]
+layout_mode = 2
+vertical = true
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/MarginContainer/BoxContainer" unique_id=1306488138]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture_normal = ExtResource("1_av7yx")
+texture_pressed = ExtResource("2_v66jq")
+texture_hover = ExtResource("2_v66jq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton7" type="TextureButton" parent="PanelContainer/MarginContainer/BoxContainer" unique_id=194994086]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture_normal = ExtResource("3_av7yx")
+texture_pressed = ExtResource("4_ootfb")
+texture_hover = ExtResource("4_ootfb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/MarginContainer/BoxContainer" unique_id=950167420]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture_normal = ExtResource("5_ootfb")
+texture_pressed = ExtResource("5_ootfb")
+texture_hover = ExtResource("5_ootfb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer/MarginContainer/BoxContainer" unique_id=523689234]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture_normal = ExtResource("6_v66jq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton4" type="TextureButton" parent="PanelContainer/MarginContainer/BoxContainer" unique_id=1479071363]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture_normal = ExtResource("4_jm412")
+texture_pressed = ExtResource("4_jm412")
+texture_hover = ExtResource("4_jm412")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_d7vvg")
+target_node_path = NodePath("../../../../polygon")
+button_toggle_path = NodePath(".")
+
+[node name="TextureButton6" type="TextureButton" parent="PanelContainer/MarginContainer/BoxContainer" unique_id=2039157065]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture_normal = ExtResource("11_hj3e3")
+texture_pressed = ExtResource("11_hj3e3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_d7vvg")
+target_node_path = NodePath("../../../../text")
+button_toggle_path = NodePath(".")
+
+[node name="TextureButton8" type="TextureButton" parent="PanelContainer/MarginContainer/BoxContainer" unique_id=1177450942]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+texture_normal = ExtResource("10_ootfb")
+texture_pressed = ExtResource("11_v66jq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="polygon" type="PanelContainer" parent="." unique_id=2004893790]
+visible = false
+layout_mode = 0
+offset_left = -309.0
+offset_top = 22.0
+offset_right = -13.0
+offset_bottom = 288.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ootfb")
+
+[node name="MarginContainer" type="MarginContainer" parent="polygon" unique_id=193607753]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="polygon/MarginContainer" unique_id=538770534]
+layout_mode = 2
+theme_override_constants/separation = 10
+vertical = true
+
+[node name="Label" type="Label" parent="polygon/MarginContainer/BoxContainer" unique_id=1366291278]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Polygon"
+
+[node name="GridContainer" type="GridContainer" parent="polygon/MarginContainer/BoxContainer" unique_id=78417316]
+layout_mode = 2
+columns = 7
+
+[node name="Button" type="Button" parent="polygon/MarginContainer/BoxContainer/GridContainer" unique_id=389926644]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("10_3q3ql")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="polygon/MarginContainer/BoxContainer/GridContainer" unique_id=1523630330]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("10_3q3ql")
+expand_icon = true
+
+[node name="Button3" type="Button" parent="polygon/MarginContainer/BoxContainer/GridContainer" unique_id=620842626]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("13_ovbj8")
+expand_icon = true
+
+[node name="Button4" type="Button" parent="polygon/MarginContainer/BoxContainer/GridContainer" unique_id=1300211836]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("10_3q3ql")
+expand_icon = true
+
+[node name="Button5" type="Button" parent="polygon/MarginContainer/BoxContainer/GridContainer" unique_id=941671734]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("14_mtmny")
+expand_icon = true
+
+[node name="Button6" type="Button" parent="polygon/MarginContainer/BoxContainer/GridContainer" unique_id=1424337197]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("15_7glcw")
+expand_icon = true
+
+[node name="Button7" type="Button" parent="polygon/MarginContainer/BoxContainer/GridContainer" unique_id=1712943487]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("16_7qt6x")
+expand_icon = true
+
+[node name="BoxContainer" type="BoxContainer" parent="polygon/MarginContainer/BoxContainer" unique_id=1721206898]
+layout_mode = 2
+vertical = true
+
+[node name="Button" type="Button" parent="polygon/MarginContainer/BoxContainer/BoxContainer" unique_id=1794553030]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+text = "Ring"
+
+[node name="BoxContainer" type="BoxContainer" parent="polygon/MarginContainer/BoxContainer/BoxContainer" unique_id=777795160]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer" unique_id=1174533787]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Size"
+
+[node name="Control" type="Control" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer" unique_id=776341615]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spin_box" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer" unique_id=921905472 instance=ExtResource("17_v66jq")]
+layout_mode = 2
+
+[node name="BoxContainer2" type="BoxContainer" parent="polygon/MarginContainer/BoxContainer/BoxContainer" unique_id=1526943141]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer2" unique_id=1548727479]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Edge"
+
+[node name="Control" type="Control" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer2" unique_id=1921958767]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spin_box" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer2" unique_id=1282703826 instance=ExtResource("17_v66jq")]
+layout_mode = 2
+
+[node name="BoxContainer3" type="BoxContainer" parent="polygon/MarginContainer/BoxContainer/BoxContainer" unique_id=972006952]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer3" unique_id=1398868443]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Esquina"
+
+[node name="Control" type="Control" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer3" unique_id=87162988]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spin_box" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer3" unique_id=175109022 instance=ExtResource("17_v66jq")]
+layout_mode = 2
+
+[node name="BoxContainer4" type="BoxContainer" parent="polygon/MarginContainer/BoxContainer/BoxContainer" unique_id=906513752]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer4" unique_id=991308892]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Size"
+
+[node name="Control" type="Control" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer4" unique_id=1611762156]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spin_box" parent="polygon/MarginContainer/BoxContainer/BoxContainer/BoxContainer4" unique_id=186873903 instance=ExtResource("17_v66jq")]
+layout_mode = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="polygon" unique_id=1061166795]
+position = Vector2(207, 209)
+rotation = -0.51991
+polygon = PackedVector2Array(99, 5, 115, 4, 107, -8)
+
+[node name="text" type="PanelContainer" parent="." unique_id=823994739]
+visible = false
+layout_mode = 0
+offset_left = -166.0
+offset_top = 165.0
+offset_right = -13.0
+offset_bottom = 250.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ootfb")
+
+[node name="MarginContainer" type="MarginContainer" parent="text" unique_id=2058596225]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BoxContainer" type="BoxContainer" parent="text/MarginContainer" unique_id=2079529056]
+layout_mode = 2
+theme_override_constants/separation = 10
+vertical = true
+
+[node name="Label" type="Label" parent="text/MarginContainer/BoxContainer" unique_id=111271924]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Text"
+
+[node name="GridContainer" type="GridContainer" parent="text/MarginContainer/BoxContainer" unique_id=137186266]
+layout_mode = 2
+columns = 7
+
+[node name="Button" type="Button" parent="text/MarginContainer/BoxContainer/GridContainer" unique_id=716568065]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("11_hj3e3")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="text/MarginContainer/BoxContainer/GridContainer" unique_id=1926277767]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3q3ql")
+icon = ExtResource("18_hj3e3")
+expand_icon = true
+
+[node name="Polygon2D" type="Polygon2D" parent="text" unique_id=1456554208]
+position = Vector2(62, 94)
+rotation = -0.51991
+polygon = PackedVector2Array(99, 5, 115, 4, 107, -8)

@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://5vmoyu7c8m4j"]
+
+[ext_resource type="Script" uid="uid://b0iykyemrmivd" path="res://script_gdscript/btn_toogle.gd" id="1_hyr5e"]
+[ext_resource type="PackedScene" uid="uid://cp3oraptv54v8" path="res://Scene/spin_box.tscn" id="2_lk8fy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyr5e"]
+bg_color = Color(1, 1, 1, 1)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rvo5"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqvda"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkfhh"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyj24"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lk8fy"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lew25"]
+bg_color = Color(0, 0.5019608, 0.0627451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuabb"]
+
+[node name="panel__effects" type="Control" unique_id=952128847]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 425.0
+grow_horizontal = 2
+metadata/_edit_vertical_guides_ = [959.0]
+
+[node name="Panel" type="Panel" parent="." unique_id=1827428356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hyr5e")
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=1604934497]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 257.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/Panel" unique_id=1645468750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel/MarginContainer" unique_id=1622881711]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/Panel/MarginContainer/VBoxContainer" unique_id=1680592814]
+layout_mode = 2
+text = "Effect"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Panel/MarginContainer/VBoxContainer" unique_id=726186123]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=626110313]
+layout_mode = 2
+text = "shader"
+
+[node name="Button2" type="Button" parent="Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1065433424]
+layout_mode = 2
+text = "shader"
+
+[node name="Button3" type="Button" parent="Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1091524923]
+layout_mode = 2
+text = "shader"
+
+[node name="Button4" type="Button" parent="Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1643985072]
+layout_mode = 2
+text = "shader"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=235568105]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.5
+offset_top = 20.0
+offset_right = 121.5
+offset_bottom = 51.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer" unique_id=733227842]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8rvo5")
+text = "Vectorize"
+
+[node name="Button4" type="Button" parent="Panel/HBoxContainer" unique_id=615975761]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8rvo5")
+text = "Effects"
+
+[node name="Button2" type="Button" parent="Panel/HBoxContainer" unique_id=748130105]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8rvo5")
+text = "Shader"
+
+[node name="Button5" type="Button" parent="Panel/HBoxContainer" unique_id=1687736591]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8rvo5")
+text = "Script"
+
+[node name="cancel" type="Button" parent="Panel/HBoxContainer" unique_id=1134557832]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nqvda")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nkfhh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dyj24")
+text = "X"
+script = ExtResource("1_hyr5e")
+target_node_path = NodePath("../../..")
+button_toggle_path = NodePath(".")
+
+[node name="Panel2" type="Panel" parent="Panel" unique_id=1025231417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lk8fy")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/Panel2" unique_id=1830237958]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BoxContainer2" type="BoxContainer" parent="Panel/Panel2/MarginContainer" unique_id=187765776]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2" unique_id=1602714166]
+layout_mode = 2
+size_flags_horizontal = 0
+vertical = true
+
+[node name="Label" type="Label" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=262649821]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Vectorizer
+"
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=1502255521]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer" unique_id=1121964341]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "pixeles"
+
+[node name="Control" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer" unique_id=921905472 instance=ExtResource("2_lk8fy")]
+layout_mode = 2
+
+[node name="BoxContainer2" type="BoxContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=2058336467]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer2" unique_id=2048808919]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "pixeles"
+
+[node name="Control" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer2" unique_id=627182853 instance=ExtResource("2_lk8fy")]
+layout_mode = 2
+
+[node name="BoxContainer3" type="BoxContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=233830120]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer3" unique_id=57406681]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "pixeles"
+
+[node name="Control" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer3" unique_id=255284306 instance=ExtResource("2_lk8fy")]
+layout_mode = 2
+
+[node name="BoxContainer4" type="BoxContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=1784685925]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer4" unique_id=225465506]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "pixeles"
+
+[node name="Control" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer/BoxContainer4" unique_id=2122411594 instance=ExtResource("2_lk8fy")]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=924352675]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(3)
+split_offset = 3
+
+[node name="Control" type="Control" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=1370756921]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer" unique_id=1734976830]
+custom_minimum_size = Vector2(32, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lew25")
+text = "Generation vectorizer"
+
+[node name="BoxContainer2" type="BoxContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2" unique_id=2051901797]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer2" unique_id=1067819600]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tuabb")
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Panel2/MarginContainer/BoxContainer2/BoxContainer2/PanelContainer" unique_id=1738377147]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+color = Color(0.90234375, 0.90234375, 0.90234375, 1)

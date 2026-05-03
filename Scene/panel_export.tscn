@@ -1,0 +1,294 @@
+[gd_scene format=3 uid="uid://bwfvuaxaip16m"]
+
+[ext_resource type="PackedScene" uid="uid://cp3oraptv54v8" path="res://Scene/spin_box.tscn" id="1_8k6w1"]
+[ext_resource type="Script" uid="uid://b0iykyemrmivd" path="res://script_gdscript/btn_toogle.gd" id="1_e4rlv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4rlv"]
+bg_color = Color(0.8515625, 0.8515625, 0.8515625, 1)
+shadow_color = Color(0, 0, 0, 0.3137255)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npura"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0l2g3"]
+bg_color = Color(0.89411765, 0.89411765, 0.89411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km3ih"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.89453125, 0.89453125, 0.89453125, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k6w1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3goxh"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqeks"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.8984375, 0.8984375, 0.8984375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwi2q"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_debnt"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Panel_manager" type="Panel" unique_id=758353070]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -343.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e4rlv")
+
+[node name="Export" type="Panel" parent="." unique_id=910721862]
+custom_minimum_size = Vector2(304, 304)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -407.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_npura")
+
+[node name="MarginContainer" type="MarginContainer" parent="Export" unique_id=396113435]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Export/MarginContainer" unique_id=1123846772]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer" unique_id=1064609743]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Export
+"
+
+[node name="name" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=1786055499]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer/name" unique_id=238142090]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="Export/MarginContainer/VBoxContainer/name" unique_id=96709204]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_0l2g3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=1578942937]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Export/MarginContainer/VBoxContainer/HBoxContainer" unique_id=766318856]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_km3ih")
+text = "SVG
+"
+
+[node name="Button2" type="Button" parent="Export/MarginContainer/VBoxContainer/HBoxContainer" unique_id=209142020]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_km3ih")
+text = "PNG
+"
+
+[node name="Button3" type="Button" parent="Export/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1770441462]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_km3ih")
+text = "JPEG"
+
+[node name="Button5" type="Button" parent="Export/MarginContainer/VBoxContainer/HBoxContainer" unique_id=801565599]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_km3ih")
+text = "JPEG XL"
+
+[node name="Button4" type="Button" parent="Export/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1658060895]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_km3ih")
+text = "WEBP
+"
+
+[node name="Button6" type="Button" parent="Export/MarginContainer/VBoxContainer/HBoxContainer" unique_id=421177135]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_km3ih")
+text = "EPS"
+
+[node name="Button7" type="Button" parent="Export/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2060495813]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_km3ih")
+text = "PDF"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=1913204725]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1117552046]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Cantidad"
+
+[node name="Control" parent="Export/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=921905472 instance=ExtResource("1_8k6w1")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=1005306206]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1293840173]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Resolucion"
+
+[node name="Control" parent="Export/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=469836933 instance=ExtResource("1_8k6w1")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=66351921]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1292963551]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Mesa trabajo"
+
+[node name="MenuBar" type="MenuBar" parent="Export/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1013072863]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+start_index = 0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=1868640465]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1945524336]
+layout_mode = 2
+text = "formato"
+
+[node name="SpinBox" type="SpinBox" parent="Export/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=584052550]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=1532659530]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1999409334]
+layout_mode = 2
+text = "formato"
+
+[node name="SpinBox" type="SpinBox" parent="Export/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1402693337]
+layout_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Export/MarginContainer/VBoxContainer" unique_id=871109847]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Export/MarginContainer/VBoxContainer/HBoxContainer7" unique_id=563851844]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Formato"
+
+[node name="Control" parent="Export/MarginContainer/VBoxContainer/HBoxContainer7" unique_id=1152451638 instance=ExtResource("1_8k6w1")]
+layout_mode = 2
+
+[node name="FIle" type="Panel" parent="." unique_id=1792647377]
+custom_minimum_size = Vector2(0, 304)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 261.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8k6w1")
+
+[node name="MarginContainer" type="MarginContainer" parent="FIle" unique_id=1281985757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FIle/MarginContainer" unique_id=801018390]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="FIle/MarginContainer/VBoxContainer" unique_id=1446868539]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "File"
+
+[node name="Tree" type="Tree" parent="FIle/MarginContainer/VBoxContainer" unique_id=779729761]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3goxh")
+
+[node name="BoxContainer" type="BoxContainer" parent="FIle/MarginContainer/VBoxContainer/Tree" unique_id=1700312664]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 5
+vertical = true
+
+[node name="Button" type="Button" parent="FIle/MarginContainer/VBoxContainer/Tree/BoxContainer" unique_id=1187202769]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqeks")
+text = "Nuevo"
+
+[node name="Button4" type="Button" parent="FIle/MarginContainer/VBoxContainer/Tree/BoxContainer" unique_id=265001146]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqeks")
+text = "Reciente"
+
+[node name="Button2" type="Button" parent="FIle/MarginContainer/VBoxContainer/Tree/BoxContainer" unique_id=1834444313]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqeks")
+text = "Archivos"
+
+[node name="Button3" type="Button" parent="FIle/MarginContainer/VBoxContainer/Tree/BoxContainer" unique_id=2081143351]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqeks")
+text = "Recuperar"
+
+[node name="Cancel" type="Button" parent="FIle" unique_id=339582609]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 9.0
+offset_right = 253.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lwi2q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_debnt")
+text = "X"
+script = ExtResource("1_e4rlv")
+target_node_path = NodePath("../..")
+button_toggle_path = NodePath(".")
